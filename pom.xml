@@ -11,6 +11,25 @@
         <spring.version>3.2.0.RELEASE</spring.version>
     </properties>
 
+    <scm>
+        <connection>scm:git:https://github.com/gedexx/squiggypoc</connection>
+        <developerConnection>scm:git:https://github.com/gedexx/squiggypoc</developerConnection>
+        <url>https://github.com/gedexx/squiggypoc</url>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>deploymentRepository</id>
+            <name>releases internes</name>
+            <url>http://192.168.1.39:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>deploymentRepository</id>
+            <name>snapshots</name>
+            <url>http://192.168.1.39:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
