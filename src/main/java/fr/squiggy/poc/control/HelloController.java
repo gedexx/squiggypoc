@@ -8,8 +8,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.util.List;
-
 @Controller
 @RequestMapping("/")
 public class HelloController {
@@ -19,8 +17,9 @@ public class HelloController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String printWelcome(ModelMap model) {
+        Utilisateur utilisateur = utilisateurService.selectUtilisateurById((long) 1);
         model.addAttribute("message", "Hello world!");
-        List<Utilisateur> utilisateurs = utilisateurService.selectAll();
+        model.addAttribute("utilisateur", utilisateur);
         return "hello";
     }
 }
